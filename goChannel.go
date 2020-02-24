@@ -86,7 +86,7 @@ func main()  {
 
 func logger()  {
 	for {
-		select {
+		select {  // blocking select statement
 		case entry := <- logCh:
 			fmt.Println(  entry.time.String() + "[" + entry.severity + "] " + entry.message)
 		case <- doneCh:
